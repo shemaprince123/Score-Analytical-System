@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/graph">Graph</a>
+    </nav>
+    <!--<h1>THIS IS THE ADMIN</h1>-->
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Score</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="table">
+
+        </tbody>
+    </table>
+
+    <p>Would you like to make a new grade?</p>
+
+    <button class="btn btn-success"  id="unique" data-toggle="modal" data-target="#new-score">NEW SCORE</button>
+      
+
+
+
+<!-- Modal for Editing the score -->
+<div class="modal fade" id="editScore" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmation Box</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="updateForm">
+            <label for="studentID">Student ID</label>
+            <input type="text" id="studID" name='studID' disabled>
+            <label for="studentName">Student Name</label>
+            <input type="text" id="studName" name='studName'>
+            <label for="Grade">Score</label>
+            <input type="text" id="studScore" name="studScore">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal" id="close3">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- End of the modal --}}
+
+<!-- Modal for Adding new score -->
+<div class="modal fade" id="new-score" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmation Box</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="insert-form">
+            <label for="studentID">Student ID</label>
+            <input type="text" name="Student_ID" id="Student_ID">
+            <label for="studentName">Student Name</label>
+            <input type="text" name="Student_Name" id="Student_Name">
+            <label for="Grade">Score</label>
+            <input type="text" name="Student_Score" id="Student_Score">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal" id="close2">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- End of the modal --}}
+
+<!-- Modal for confirmation -->
+<div class="modal fade" id="confirmBox" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmation Box</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this student?:
+        <p id="stud">some text</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal" id="close">No</button>
+        <button type="button" class="btn btn-danger" onclick="deleteStudent()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- End of the modal --}}
+
+
+
+</body>
+
+<script src="js/admin.js"></script>
+</html>

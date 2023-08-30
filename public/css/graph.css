@@ -1,0 +1,42 @@
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Navigation styling */
+  nav {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+  }
+  
+  nav a:hover {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  /* Heading styling */
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  /* Graph styling */
+  canvas {
+    margin: 2rem auto;
+    display: block;
+    max-width: 700px;
+    width: 100%;
+  }
+  
